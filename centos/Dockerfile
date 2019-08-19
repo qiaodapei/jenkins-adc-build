@@ -19,7 +19,7 @@ RUN localedef -v -c -i en_US -f UTF-8 zh_CN.UTF-8 >/dev/null 2>&1 &&\
     grep -q 'zh_CN.utf8' /etc/locale.conf || sed -i -E 's/^LANG=.*/LANG="zh_CN.UTF-8"/' /etc/locale.conf &&\
     yum -y install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm &&\
     yum install -y ntp yum-plugin-fastestmirror vim-enhanced ntp wget bash-completion elinks lrzsz unix2dos dos2unix git unzip net-tools cronie libcurl-devel libxml2-devel glibc.i686 libstdc++-devel.i686 centos-release-scl&&\
-    yum-config-manager --add-repo https://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo
+    yum-config-manager --add-repo https://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo  &&\
     yum install -y sudo gcc-c++ make libssh2-devel mysql-community-client python python-devel python-pip java-1.8.0-openjdk openssl openssl-devel libstdc++-devel rpmdevtools \
     mock  boost-devel uuid-c++-devel libuuid-devel devtoolset-7 apache-maven glog-devel gflags-devel glog-devel lmdb-devel libatomic atomic pugixml pugixml-devel&&\
     yum localinstall -y /tmp/Resource/rpm/* && \
